@@ -1,0 +1,23 @@
+
+<div class="col-md-6">
+<div class="spacer"></div><div class="spacer"></div>
+<p> Chosen Items negative:</p>
+
+    {% for startup in last_ones %}
+        <li><p>{{ startup.title }}</p></li>
+    {% endfor %}
+    </ul>
+
+</div>
+
+<div class="spacer"></div><div class="spacer"></div>
+
+<div class="col-md-6">
+<p> Chosen Items positive:</p>
+
+    {% for startup in first_ones %}
+        <li><p>{{ startup.title }}</p></li>
+    {% endfor %}
+    </ul>
+
+</div>

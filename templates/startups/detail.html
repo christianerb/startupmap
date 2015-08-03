@@ -1,0 +1,31 @@
+{% extends "base/theme.html" %}
+
+
+{% block main_content %}
+
+<h1 class="text-center">{{ startup.title }}</h1>
+
+<tr>
+	<td class="td-width"><p>{{ startup.description }}<p></td>
+	<td class="td-width">{{ startup.address }}</td>
+</tr>
+<br>
+<a href="{% url 'startup_list' %}"><p><i class="fa fa-backward"></i>  Return to List</p></A>
+
+<div class="data-layer">
+    <ul>
+        <li class="startup-data" data-latitude="{{ startup.location.latitude }}" data-longitude="{{ startup.location.longitude }}">{{ startup.title }}</li>
+    </ul>
+</div>
+
+<div class="row">
+	<div class="col-md-1"></div>
+  <div class="col-md-10">
+    <div class="thumbnail">
+		<div id="map" class="wide-map"></div>
+	</div>
+	<div class="col-md-1"></div>	
+</div>
+</div>
+
+{% endblock %}

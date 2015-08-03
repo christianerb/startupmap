@@ -1,0 +1,16 @@
+{% extends "base/theme.html" %}
+
+
+{% block main_content %}
+<div class="spacer"></div>
+<div class="data-layer">
+ <ul>
+ {% for startup in object_list %}
+ <li class="startup-data" data-latitude="{{ startup.location.latitude }}" data-longitude="{{ startup.location.longitude }}" data-id="{{ startup.id }}">{{ startup.title }}</li>
+ {% endfor %}
+ </ul>
+</div>
+
+<div id="map" class="wide-map"></div>
+
+{% endblock %}

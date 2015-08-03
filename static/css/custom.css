@@ -1,0 +1,42 @@
+.spacer {
+	margin-top: 40px;
+}
+
+.td-width {
+	min-width: 100px;
+	max-width: 500px;
+}
+
+.wide-map { 
+    height:600px;
+}
+
+.data-layer {
+	display: none;
+}
+
+.bg-test {
+	background: 	background: url("../img/index_background.jpg") no-repeat center center fixed; 
+	opacity: 0.3;
+}
+
+.alpha60 {
+	/* Fallback for web browsers that doesn't support RGBa */
+	background: rgb(0,0,0);
+	/* RGBa with 0.6 opacity */
+	background: rgba(144, 198, 49, 0.6);
+	position: absolute; top: 0; left: 0; height: 100%; width:100%;
+}
+
+.transbox {
+    margin: 30px;
+    background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+.transbox p {
+    margin: 2%;
+    color: #000000;
+}
