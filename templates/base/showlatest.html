@@ -1,23 +1,48 @@
+	<div class="container">
+		<div class="col-md-6">
+			<div class="panel panel-default">
+		  <!-- Default panel contents -->
+				<div class="panel-heading">Recently added 
+					<span class="indexed_categoryview">
+						<a href="{% url 'startup_list' %}">
+							<i class="fa fa-eye"></i>
+						</a>
+					</span>
+				</div>
+				
+					<ul class="list-group">
+		    		{% for startup in last_ones %}
+		    			<li class="list-group-item">
+		    				<i class="fa fa-sort-asc"></i>
+		        			<a href="{% url 'startup_detail' pk=startup.id %}" class="indexed_linkview">{{ startup.title }}</a>
+		        			<p class="indexed_categoryview"> {{ startup.get_category_display }}</p>
+		        		</li>
+		    		{% endfor %}
+		    		</ul>
+				</div>
+			</div>
 
-<div class="col-md-6">
-<div class="spacer"></div><div class="spacer"></div>
-<p> Chosen Items negative:</p>
 
-    {% for startup in last_ones %}
-        <li><p>{{ startup.title }}</p></li>
-    {% endfor %}
-    </ul>
-
-</div>
-
-<div class="spacer"></div><div class="spacer"></div>
-
-<div class="col-md-6">
-<p> Chosen Items positive:</p>
-
-    {% for startup in first_ones %}
-        <li><p>{{ startup.title }}</p></li>
-    {% endfor %}
-    </ul>
-
-</div>
+		<div class="col-md-6">
+			<div class="panel panel-default">
+		  <!-- Default panel contents -->
+				<div class="panel-heading">First added 
+					<span class="indexed_categoryview">
+						<a href="{% url 'startup_list' %}">
+							<i class="fa fa-eye"></i>
+						</a>
+					</span>
+				</div>
+				
+					<ul class="list-group">
+		    		{% for startup in latest_startup %}
+		    			<li class="list-group-item">
+		    				<i class="fa fa-sort-asc"></i>
+		        			<a href="{% url 'startup_detail' pk=startup.id %}" class="indexed_linkview">{{ startup.title }}</a>
+		        			<p class="indexed_categoryview"> {{ startup.get_category_display }}</p>
+		        		</li>
+		    		{% endfor %}
+		    		</ul>
+				</div>
+			</div>
+		</div>

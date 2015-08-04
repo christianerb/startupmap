@@ -29,7 +29,5 @@ urlpatterns = patterns('',
     url(r'startups/(?P<pk>\d+)/delete/$', login_required(coreviews.StartupDeleteView.as_view()), name='startup_delete'),
     url(r'startups/(?P<pk>\d+)/update/$', login_required(coreviews.StartupUpdateView.as_view()), name='startup_update'),
     url(r'entrance/$', coreviews.entrance, name='signin_page'),  
-    url(r'logout/$', coreviews.logout_view, name='logged_out'), 
-    url(r'filtered/$', coreviews.index_filtered, name='list_filtered'),
-
+    url(r'logout/$', coreviews.logout_view, name='logged_out'),  
 )

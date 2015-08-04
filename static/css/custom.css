@@ -40,3 +40,12 @@
     margin: 2%;
     color: #000000;
 }
+
+.indexed_linkview {
+	padding-left: 15px;
+}
+
+.indexed_categoryview {
+	float: right;
+	margin: 0px;
+}

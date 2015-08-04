@@ -22,13 +22,12 @@
 	<td class="td-width"><p>{{ startup.description }}<p></td>
 	<td class="td-width">{{ startup.address }}</td>
 	<td class><a type="button" href="{% url 'startup_update' pk=startup.id %}" class="btn btn-default pull-right"><i class="fa fa-pencil-square-o"></a></td>
-	<td class><a type="button" href="{% url 'startup_delete' pk=startup.id %}" class="btn btn-default pull-right"><i class="fa fa-times"></a></td>	
+	<td class><a type="button" href="{% url 'startup_delete' pk=startup.id %}" class="btn btn-default pull-right"><i class="fa fa-times"></a></td>
+	<td class="td-width"> {{ startup.get_category_display }}</td>	
 </tr>
 
 {% endfor %}
 </table>
-
-
 
 {% endblock %}
 

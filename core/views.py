@@ -14,6 +14,14 @@ import core.models as coremodels
 class LandingView(TemplateView):
 	template_name = "base/index.html"
 
+	def get_context_data(self, **kwargs):
+		context = super(LandingView, self).get_context_data(**kwargs)
+		latest_all = coremodels.Startup.objects.all().order_by('created_on')
+		latest_startup = coremodels.Startup.objects.all().order_by('created_on')
+		context['last_ones'] = latest_all.reverse()[:2]
+		context['latest_startup'] = latest_startup[:5]
+		return context
+
 class StartupListView(ListView):
 	model = coremodels.Startup
 	template_name= "startups/list.html"
@@ -63,11 +71,3 @@ def logout_view(request):
   auth.logout(request)
   # Redirect to a success page.
   return render(request, "base/index.html")
-
-def index_filtered(request):
-	last_ones = coremodels.Startup.objects.all().order_by('-id')[:5]
-	first_ones = coremodels.Startup.objects.all().order_by('id')[:5]
-	return render_to_response("base/showlatest.html", {'last_ones': last_ones, 'first_ones' : first_ones})
-
-
-
